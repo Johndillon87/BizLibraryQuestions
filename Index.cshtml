@@ -1,0 +1,38 @@
+﻿<div class="col" id="quest">
+    <h2>Ask me a question!</h2>
+    <label for="usrQuestion">Enter you question in here: </label>
+    <input type="text" id="usrQuestion" name="usrQuestion" />
+    <div>
+        <input type="button" value="Submit" onclick="getAnswer()" />
+    </div>
+    <p><span id="theAnswer"></span></p>
+</div>
+
+@RenderBody();
+
+
+<script>
+        function getAnswer() {
+            var usrQuestion = document.getElementById('usrQuestion');
+            var theAnswer = document.getElementById('theAnswer');
+            if (usrQuestion.value == "What is your favorite programming language, and why?") {
+                theAnswer.textContent = "JavaScript, because of all the things you can do with it.";
+            }
+            else if (usrQuestion.value == "Tabs or spaces, and why?") {
+                theAnswer.textContent = "I often find myself using both, which is probably frowned upon. It is my understanding that using spaces is better because it is the same across all editors.";
+            }
+            else if (usrQuestion.value == "Do you have a Github account?") {
+                theAnswer.textContent = "I do but I have never used it. I have a bitbucket account though.";
+            }
+            else if (usrQuestion.value == "What does JSON stand for?") {
+                theAnswer.textContent = "It stands for JavaScript Object Notation.";
+            }
+            else if (usrQuestion.value == "Really awesome easter egg, Trust me") {
+                window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            }
+            else {
+                theAnswer.textContent = "That is not a valid question or it is not a question I expected.";
+            }
+
+        };
+    </script>
